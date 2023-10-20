@@ -50,7 +50,5 @@ namespace Player
             }
             healthBar.SetCurrentHealth(_currentHealth);
         }
-    
-    
     }
 }

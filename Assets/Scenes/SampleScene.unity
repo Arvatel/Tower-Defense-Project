@@ -2040,6 +2040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: To build tower press E
+  towerBuilt: 0
   firstTower: {fileID: 3602817855560803219, guid: e013745a2e6c013419909df03ecb86c5, type: 3}
 --- !u!1 &1337055697
 GameObject:
@@ -2584,6 +2585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: To build tower press E
+  towerBuilt: 0
   firstTower: {fileID: 3602817855560803219, guid: e013745a2e6c013419909df03ecb86c5, type: 3}
 --- !u!1 &1793130668
 GameObject:

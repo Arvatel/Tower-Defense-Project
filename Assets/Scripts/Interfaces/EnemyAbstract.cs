@@ -23,6 +23,7 @@ namespace Interfaces
 
         void Move(){}
 
+        // Color changing needed mostly for Debugging
         public void TakeDamage(float amount)
         {
             CurrentHealth -= amount;

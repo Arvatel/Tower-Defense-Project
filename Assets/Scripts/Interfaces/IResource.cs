@@ -5,9 +5,9 @@ namespace Interfaces
 {
     public interface IResource
     {
-        public IdEnum resourceId { get; }
+        public IdEnum ResourceId { get; }
 
-        public int resourceAmount { get; }
+        public int ResourceAmount { get; }
         
         public bool Interact(PlayerGatherResources resource);
     }

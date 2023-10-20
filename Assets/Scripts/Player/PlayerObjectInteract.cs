@@ -23,7 +23,10 @@ namespace Player
             _playerHintUI = GetComponent<PlayerHintUI>();
         }
 
-        // Update is called once per frame
+        // TODO: Make interactable zone move with player's look
+        // TODO: Add interactions with the TowerBase with decision of which tower to built
+        // TODO: Add possibility to heal from med-kits, rewrite simple healing to using med-kits
+        // TODO: Add repair-kits for towers
         void Update()
         {
             _playerHintUI.UpdateText(string.Empty);
@@ -44,6 +47,7 @@ namespace Player
             }
         }
 
+        // Function for Debug purposes
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;

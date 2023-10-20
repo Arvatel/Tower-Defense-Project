@@ -4,6 +4,7 @@ using UnityEngine.PlayerLoop;
 
 namespace Player
 {
+    // TODO: Update function with other resources
     public class PlayerInventory : MonoBehaviour
     {
         [SerializeField] private int stoneAmount = 0;

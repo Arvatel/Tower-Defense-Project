@@ -23,19 +23,23 @@ namespace Interfaces
         protected float AmmoDamage;
         protected float RateOfFire; 
         protected float ShootingRange;
-        protected float time = 0;
+        protected float Time = 0;
 
-        //TODO: Health System for towers
+        /*  TODO: Health System for towers
+            Health bar have to be connected to the tower object
+            Health Bar have to be hidden if HP is full */ 
         
         // Method for detecting enemies and shooting them
         // Most likely shooting will cause to damage to random or closest to the base Enemy withing range
         // We do not need to materialise the bullets in order to simplify system and reduce system load
+        
+        // TODO: Separate function into 2 - actual shoot and detecting enemies (if needed)
         protected void Shoot()
         {
             numFound = Physics.OverlapSphereNonAlloc(shootingPoint.position, ShootingRange, _colliders,
                 enemyMask);
             
-            time += Time.deltaTime;
+            Time += UnityEngine.Time.deltaTime;
             float nextShoot = 1 / RateOfFire;
 
             if (numFound > 0)
@@ -46,11 +50,11 @@ namespace Interfaces
                 if (enemy != null)
                 {
                     // Debug.Log("Found enemy");
-                    if (time >= nextShoot)
+                    if (Time >= nextShoot)
                     {
                         CurrentAmmoAmount -= 1;
                         enemy.TakeDamage(AmmoDamage);
-                        time = 0;
+                        Time = 0;
                         Debug.Log("Ammo " + CurrentAmmoAmount);
                     }
                 }
@@ -66,6 +70,7 @@ namespace Interfaces
                 CurrentAmmoAmount = MaxAmmoAmount;
         }
         
+        // Function used for Debug purposes
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.green;

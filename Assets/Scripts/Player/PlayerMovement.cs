@@ -64,7 +64,6 @@ namespace Player
         private void Start()
         {
             rb = GetComponent<Rigidbody>();
-
             rb.freezeRotation = true;
         }
     
@@ -141,14 +140,10 @@ namespace Player
             {
                 rb.AddForce(slopeMoveDirection.normalized * (moveSpeed * moveMultiplier), ForceMode.Acceleration);
             }
-            
             else if (!isGrounded)
             {
                 rb.AddForce(moveDirection.normalized * (moveSpeed * airMultiplier), ForceMode.Acceleration);
             }
-        
         }
-    
-    
     }
 }

@@ -8,11 +8,9 @@ namespace GatheringResources
     public class StoneResource : MonoBehaviour, IResource
     {
         [SerializeField] private int amount;
-        private const string Name = "Stone";
-
-        public string resourceName => Name;
-        public IdEnum resourceId => IdEnum.Stone;
-        public int resourceAmount => amount;
+        
+        public IdEnum ResourceId => IdEnum.Stone;
+        public int ResourceAmount => amount;
         public bool Interact(PlayerGatherResources resource)
         {
             Debug.Log("Found stone");

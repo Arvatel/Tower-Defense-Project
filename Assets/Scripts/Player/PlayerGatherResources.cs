@@ -10,6 +10,7 @@ namespace Player
         [SerializeField] private LayerMask gatheringMask;
         [SerializeField] private float gatheringPointRadius = 2f;
 
+        // Understand why there are used only 3 elements, fix if needed
         private readonly Collider[] _colliders = new Collider[3];
         [SerializeField] private int numFound;
     
@@ -25,7 +26,7 @@ namespace Player
             _stats = GetComponent<PlayerStats>();
         }
 
-        // Update is called once per frame
+        // TODO: Reorganize the function to be more concise and structured
         void Update()
         {
             _playerResourcesUI.UpdateText(IdEnum.Money + ": " + _inventory.GetResourceAmount(IdEnum.Money) + "\n" +
@@ -38,23 +39,23 @@ namespace Player
                 var col = _colliders[0];
                 var interactable = col.GetComponent<IResource>();
             
-                _playerResourcesUI.UpdateText(interactable.resourceId.ToString());    
+                _playerResourcesUI.UpdateText(interactable.ResourceId.ToString());    
             
                 if (interactable != null)
                 {
                     interactable.Interact(this);
                     
                     // if object is Health Kit it restores Health
-                    if (interactable.resourceId == IdEnum.Health)
+                    if (interactable.ResourceId == IdEnum.Health)
                     {
-                        _stats.RestoreHealth(interactable.resourceAmount);
+                        _stats.RestoreHealth(interactable.ResourceAmount);
                     }
 
                     // For gathering general resources
                     else
                     {
-                        _inventory.UpdateResource(interactable.resourceId, interactable.resourceAmount);
-                        Debug.Log(interactable.resourceId + ": " + _inventory.GetResourceAmount(interactable.resourceId));
+                        _inventory.UpdateResource(interactable.ResourceId, interactable.ResourceAmount);
+                        Debug.Log(interactable.ResourceId + ": " + _inventory.GetResourceAmount(interactable.ResourceId));
                 
                         _playerResourcesUI.UpdateText(IdEnum.Money + ": " + _inventory.GetResourceAmount(IdEnum.Money) + "\n" +
                                                       IdEnum.Stone + ": " + _inventory.GetResourceAmount(IdEnum.Stone)) ;
@@ -62,6 +63,8 @@ namespace Player
                     Destroy(col.gameObject);
                 }
             }
+            
+            // Condition used for Debug purposes
             if (Keyboard.current.fKey.wasPressedThisFrame)
             {
                 _inventory.UpdateResource(IdEnum.Money, 10);
@@ -69,6 +72,7 @@ namespace Player
             }
         }
     
+        // Function used for Debug purposes
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.yellow;

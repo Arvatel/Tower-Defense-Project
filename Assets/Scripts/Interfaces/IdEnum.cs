@@ -4,6 +4,10 @@ namespace Interfaces
     {
         Health = 0,
         Money = 1,
-        Stone = 2
+        Stone = 2,
+        ShotgunAmmo,
+        SmgAmmo,
+        TowerAmmo,
+        TowerHealItem,
     }
 }

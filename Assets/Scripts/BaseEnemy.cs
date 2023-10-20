@@ -16,14 +16,12 @@ public class BaseEnemy : EnemyAbstract
         CurrentHealth = MaxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // For Debugging
         if (Keyboard.current.zKey.wasPressedThisFrame)
         {
             TakeDamage(10);
         }
-        
-        
     }
 }
