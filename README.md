@@ -28,3 +28,23 @@ Idea from the game Sanctum 2
 
 ### Note:
 Description will change during development
+
+## Work Done:
+- Basic movement system
+	- Includes jumping, walking, running
+- Base script for interactions with objects
+	- Descriptions to help user with interactions
+	- Creating Tower by interacting
+- Automatic gathering resources
+	- Detecting, picking up and destroing resource object afterwards
+	- Storing in simple Player's inventory
+- Simple Health System for Player
+	- Shows Health Bar
+	- Ability to take damage and restore health
+- Base scripting for Towers
+	- Detecting Enemies within predefined radius
+	- Shooting Enemies and spending ammo
+	- Abstract class for simple Tower creating process
+- Simplified Enemy 
+	- Taking damage
+	- Dieing after loosing all HP
