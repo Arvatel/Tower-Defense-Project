@@ -5,11 +5,13 @@ using UnityEngine.Serialization;
 
 namespace GatheringResources
 {
+    // Items collected and can be used for healing Player
+    // TODO Add cooldown
     public class HealingResource : MonoBehaviour, IResource
     {
-        [SerializeField] private int amount;
+        private int amount = 1;
         
-        public IdEnum ResourceId => IdEnum.Health;
+        public IdEnum ResourceId => IdEnum.HealingItem;
         public int ResourceAmount => amount;
         public bool Interact(PlayerGatherResources resource)
         {
