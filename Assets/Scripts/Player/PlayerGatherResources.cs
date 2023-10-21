@@ -45,21 +45,13 @@ namespace Player
                 {
                     interactable.Interact(this);
                     
-                    // if object is Health Kit it restores Health
-                    if (interactable.ResourceId == IdEnum.Health)
-                    {
-                        _stats.RestoreHealth(interactable.ResourceAmount);
-                    }
-
                     // For gathering general resources
-                    else
-                    {
-                        _inventory.UpdateResource(interactable.ResourceId, interactable.ResourceAmount);
-                        Debug.Log(interactable.ResourceId + ": " + _inventory.GetResourceAmount(interactable.ResourceId));
+                    _inventory.UpdateResource(interactable.ResourceId, interactable.ResourceAmount);
+                    Debug.Log(interactable.ResourceId + ": " + _inventory.GetResourceAmount(interactable.ResourceId));
                 
-                        _playerResourcesUI.UpdateText(IdEnum.Money + ": " + _inventory.GetResourceAmount(IdEnum.Money) + "\n" +
+                    _playerResourcesUI.UpdateText(IdEnum.Money + ": " + _inventory.GetResourceAmount(IdEnum.Money) + "\n" +
                                                       IdEnum.Stone + ": " + _inventory.GetResourceAmount(IdEnum.Stone)) ;
-                    }
+                    
                     Destroy(col.gameObject);
                 }
             }
