@@ -46,12 +46,12 @@ namespace Player
                 }
             }
         }
-
+        
         // Function for Debug purposes
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(interactionPoint.position, interactionPointRadius);
-        }
+        // private void OnDrawGizmos()
+        // {
+        //     Gizmos.color = Color.red;
+        //     Gizmos.DrawWireSphere(interactionPoint.position, interactionPointRadius);
+        // }
     }
 }

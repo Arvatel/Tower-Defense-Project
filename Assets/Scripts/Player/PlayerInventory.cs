@@ -18,7 +18,6 @@ namespace Player
         
         [Header("Consumables towers")]
         [SerializeField] private int towerAmmoPack = 0;
-        [SerializeField] private int towerHealingPack = 0;
 
         public void UpdateResource(IdEnum id, int amount)
         {
@@ -47,10 +46,6 @@ namespace Player
             {
 	            towerAmmoPack += amount;
             }
-            else if (id == IdEnum.TowerHealingPack)
-            {
-	            towerHealingPack += amount;
-            }
         }
 
         public int GetResourceAmount(IdEnum id)
@@ -78,10 +73,6 @@ namespace Player
             else if (id == IdEnum.TowerAmmoPack)
             {
                 return towerAmmoPack;
-            }
-            else if (id == IdEnum.TowerHealingPack)
-            {
-                return towerHealingPack;
             }
 
             return 0;

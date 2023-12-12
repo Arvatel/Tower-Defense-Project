@@ -8,7 +8,6 @@ namespace Towers
     {
         public ShotgunTower()
         {
-            MaxHealth = 1000;
             MaxAmmoAmount = 100;
 
             AmmoDamage = 100;
@@ -17,7 +16,6 @@ namespace Towers
 
         private void Start()
         {
-            CurrentHealth = MaxHealth;
             CurrentAmmoAmount = MaxAmmoAmount;
         }
     }

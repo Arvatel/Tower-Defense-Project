@@ -7,6 +7,8 @@ namespace Interfaces
     {
         //Message displayed to player when looking at interactable object
         public string InteractionPrompt { get; }
+        
+        public InteractableIdEnum InteractableId { get; }
 
         public bool Interact(PlayerObjectInteract interactor);
     }

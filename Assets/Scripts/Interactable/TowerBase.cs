@@ -11,34 +11,33 @@ namespace Interactable
     {
         [SerializeField] private string prompt = "To build tower press " + KeyCode.E;
         public string InteractionPrompt => prompt;
-        
-        // This Bool needed in order to create only one instance of Tower on a TowerBase
-        // When Tower will be destroyed _towerBuilt will be changed to "false"
-        // It will allow to use this Base for creating new Tower
-        // Maybe we should introduce some delay for building new Tower after previous one destroyed
-        public bool towerBuilt;
+        public InteractableIdEnum InteractableId => InteractableIdEnum.TowerBase;
         
         
         // Tower created - for now it only simple instance
         // Later different towers will be created based on key used for creating  
-        public GameObject firstTower;
+        public GameObject smgTower;
+        // public GameObject shotgunTower;
+
+        private bool _isInteractable;
+        public Renderer castRender;
         
         private void Start()
         {
-            towerBuilt = false;
+            _isInteractable = true;
         }
 
         public bool Interact(PlayerObjectInteract interactor)
         {
-            if (towerBuilt)
+            if (_isInteractable)
             {
-                Debug.Log("Tower already Built");    
-                return false;
+                Instantiate(smgTower, gameObject.transform);
+                _isInteractable = false;
+                
+                castRender = GetComponent<Renderer>();
+                castRender.enabled = false;
+                prompt = "";
             }
-            Debug.Log("Interacting with Tower Base");
-            Instantiate(firstTower, gameObject.transform);
-            prompt = String.Empty;
-            towerBuilt = true;
             return true;
         }
     }

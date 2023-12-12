@@ -2,12 +2,12 @@ namespace Interfaces
 {
     public enum IdEnum
     {
-        HealingItem = 0,
-        Money = 1,
-        Stone = 2,
+        Money = 0,
+        Stone = 1,
+        
+        HealingItem,
         ShotgunAmmo,
         SmgAmmo,
         TowerAmmoPack,
-        TowerHealingPack,
     }
 }

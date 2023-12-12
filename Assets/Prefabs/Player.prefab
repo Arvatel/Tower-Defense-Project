@@ -408,8 +408,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e115e9f495f4b46a6612e3d164fbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stoneAmount: 0
-  moneyAmount: 0
+  stone: 0
+  money: 0
+  shotgunAmmo: 0
+  smgAmmo: 0
+  healingItem: 0
+  towerAmmoPack: 0
+  towerHealingPack: 0
 --- !u!114 &475248400800850746
 MonoBehaviour:
   m_ObjectHideFlags: 0

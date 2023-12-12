@@ -9,7 +9,8 @@ namespace Interactable
     {
         [SerializeField] private string _prompt = "To interact press E";
         public GameObject FirstTower;
-    
+
+        public InteractableIdEnum InteractableId => InteractableIdEnum.Other;
         public string InteractionPrompt => _prompt;
         public bool Interact(PlayerObjectInteract interactor)
         {

@@ -13,10 +13,6 @@ namespace Interfaces
         private readonly Collider[] _colliders = new Collider[3];
         [SerializeField] private int numFound;
         
-        protected float MaxHealth;
-        protected float CurrentHealth;
-        protected HealthBar HealthBarUI;
-        
         protected int MaxAmmoAmount;
         protected int CurrentAmmoAmount;
 
@@ -24,10 +20,6 @@ namespace Interfaces
         protected float RateOfFire; 
         protected float ShootingRange;
         protected float Time = 0;
-
-        /*  TODO: Health System for towers
-            Health bar have to be connected to the tower object
-            Health Bar have to be hidden if HP is full */ 
         
         // Method for detecting enemies and shooting them
         // Most likely shooting will cause to damage to random or closest to the base Enemy withing range
