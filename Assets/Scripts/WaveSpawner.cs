@@ -10,44 +10,43 @@ public class WaveSpawner : MonoBehaviour
     public Wave[] waves;
     public int currentWaveIndex = 0;
 
-    private bool readyToCountDown;
+    // private bool IsCountBetweenEnemies;
+    public bool IsCountBetweenWaves;
+    
     private void Start()
     {
-        readyToCountDown = true;
-
-        for (int i = 0; i < waves.Length; i++)
-        {
-            waves[i].enemiesLeft = waves[i].enemies.Length;
-        }
+        IsCountBetweenWaves = true;
     }
     private void Update()
     {
-        if (currentWaveIndex >= waves.Length)
-        {
-            Debug.Log("You survived every wave!");
-            return;
-        }
+        // if (currentWaveIndex >= waves.Length)
+        // {
+        //     Debug.Log("You survived every wave!");
+        //     return;
+        // }
 
-        if (readyToCountDown == true)
+        if (IsCountBetweenWaves)
         {
             countdown -= Time.deltaTime;
         }
 
         if (countdown <= 0)
         {
-            readyToCountDown = false;
+            IsCountBetweenWaves = false;
 
             countdown = waves[currentWaveIndex].timeToNextWave;
 
             StartCoroutine(SpawnWave());
         }
 
-        if (waves[currentWaveIndex].enemiesLeft == 0)
-        {
-            readyToCountDown = true;
-
-            currentWaveIndex++;
-        }
+        // waves[currentWaveIndex].enemiesLeft = spawnPoint.GetComponentsInChildren<Transform>().Length;
+        // if (true)
+        // {
+        //     IsCountBetweenWaves = true;
+        //
+        //     currentWaveIndex++;
+        // }
+        
     }
     private IEnumerator SpawnWave()
     {
@@ -62,6 +61,9 @@ public class WaveSpawner : MonoBehaviour
                 yield return new WaitForSeconds(waves[currentWaveIndex].timeToNextEnemy);
             }
         }
+
+        IsCountBetweenWaves = true;
+        currentWaveIndex++;
     }
 }
 
@@ -71,6 +73,4 @@ public class Wave
     public EnemyAbstract[] enemies;
     public float timeToNextEnemy;
     public float timeToNextWave;
-
-    [HideInInspector] public int enemiesLeft;
 }

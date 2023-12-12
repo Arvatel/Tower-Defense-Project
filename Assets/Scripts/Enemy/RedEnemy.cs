@@ -11,6 +11,7 @@ namespace Enemy
     
         void Start()
         {
+            // waveSpawner = GetComponentInParent<WaveSpawner>();
             CurrentHealth = MaxHealth;
         }
     }

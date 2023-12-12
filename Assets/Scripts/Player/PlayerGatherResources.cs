@@ -65,10 +65,10 @@ namespace Player
         }
     
         // Function used for Debug purposes
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(gatheringPoint.position, gatheringPointRadius);
-        }
+        // private void OnDrawGizmos()
+        // {
+        //     Gizmos.color = Color.yellow;
+        //     Gizmos.DrawWireSphere(gatheringPoint.position, gatheringPointRadius);
+        // }
     }
 }

@@ -5,9 +5,9 @@ namespace Interfaces
 {
     public abstract class EnemyAbstract : MonoBehaviour
     {
+        
         //TODO: Remove it later - This Field needed for debug
         [SerializeField] private string _name = "enemy";
-        
         
         // Fields for debugging
         [SerializeField] protected GameObject obj;
@@ -15,15 +15,7 @@ namespace Interfaces
         protected float MaxHealth;
         protected float CurrentHealth;
         // protected HealthBar HealthBarUI;
-
-        protected float DamageDealt;
-
-        //TODO: Beautiful Health System for enemies
         
-        void Attack(){}
-
-        void Move(){}
-
         // Color changing needed mostly for Debugging
         public void TakeDamage(float amount)
         {
@@ -47,8 +39,6 @@ namespace Interfaces
         {
             Destroy(gameObject);
             Debug.Log(_name + " Died"); 
-            
-            // Instantiate(firstTower, gameObject.transform);
         }
     }
 }

@@ -12,8 +12,8 @@ namespace Towers
         {
             MaxAmmoAmount = 200;
 
-            AmmoDamage = 50;
-            ShootingRange = 15f;
+            AmmoDamage = 30;
+            ShootingRange = 12f;
             RateOfFire = 2;
         }
 
@@ -25,17 +25,6 @@ namespace Towers
         private void Update()
         {
             Shoot();
-            if (Keyboard.current.rKey.wasPressedThisFrame)
-            {
-                ReplenishAmmo(10);
-            }
         }
-
-        // TODO: think about it
-        // public string InteractionPrompt { get; }
-        // public bool Interact(PlayerObjectInteract interactor)
-        // {
-        //     throw new NotImplementedException();
-        // }
     }
 }

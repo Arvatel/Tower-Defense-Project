@@ -37,10 +37,7 @@ namespace Enemy
         {
             waypointIndex++;
             if (waypointIndex == Waypoints.points.Length)
-            {
-                waypointIndex = Waypoints.points.Length - 2;
-            }
-                
+                waypointIndex--;
         }
     }
 }

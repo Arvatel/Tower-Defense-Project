@@ -63,10 +63,10 @@ namespace Interfaces
         }
         
         // Function used for Debug purposes
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(shootingPoint.position, ShootingRange);
-        }
+        // private void OnDrawGizmos()
+        // {
+        //     Gizmos.color = Color.green;
+        //     Gizmos.DrawWireSphere(shootingPoint.position, ShootingRange);
+        // }
     }
 }
