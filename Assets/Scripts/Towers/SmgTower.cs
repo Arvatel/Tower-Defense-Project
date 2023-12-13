@@ -12,7 +12,7 @@ namespace Towers
         {
             MaxAmmoAmount = 200;
 
-            AmmoDamage = 30;
+            AmmoDamage = 15f;
             ShootingRange = 12f;
             RateOfFire = 2;
         }

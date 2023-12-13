@@ -19,12 +19,9 @@ public class WaveSpawner : MonoBehaviour
     }
     private void Update()
     {
-        // if (currentWaveIndex >= waves.Length)
-        // {
-        //     Debug.Log("You survived every wave!");
-        //     return;
-        // }
-
+        if (currentWaveIndex == waves.Length)
+            currentWaveIndex = 0;
+        
         if (IsCountBetweenWaves)
         {
             countdown -= Time.deltaTime;
@@ -39,14 +36,6 @@ public class WaveSpawner : MonoBehaviour
             StartCoroutine(SpawnWave());
         }
 
-        // waves[currentWaveIndex].enemiesLeft = spawnPoint.GetComponentsInChildren<Transform>().Length;
-        // if (true)
-        // {
-        //     IsCountBetweenWaves = true;
-        //
-        //     currentWaveIndex++;
-        // }
-        
     }
     private IEnumerator SpawnWave()
     {
